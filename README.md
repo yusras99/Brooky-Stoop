@@ -9,4 +9,11 @@ First, install the required dependencies:
 
 ```sh
 npm install three gsap
+npm install --save-dev @types/three vite
+```
+## Development locally
 
+Use this command to run the development server locally
+```sh
+npm run dev
+```
