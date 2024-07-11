@@ -9,16 +9,21 @@
 
 .dropdown {
   background-color: #ff4bffa3 ;
-  box-shadow: 6px 6px 2px 1px rgba(0, 0, 0); 
   position: relative;
   display: inline-block;
+
+  border-radius: 50px;
+  transition: 0.2s;
+}
+
+.dropdown:hover {
+  box-shadow: 6px 6px rgba(0, 0, 0); 
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
   background-color: #f1f1f1;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
 
