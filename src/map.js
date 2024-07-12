@@ -22,15 +22,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        // Add Traffic Layer
-        var trafficLayer = new google.maps.TrafficLayer();
-        trafficLayer.setMap(map);
-
-        // Add Transit Layer
-        var transitLayer = new google.maps.TransitLayer();
-        transitLayer.setMap(map);
-
-        // Add click event listener to the map
         map.addListener('click', function() {
             var destinationLatLng = new google.maps.LatLng(destination.lat, destination.lng);
             var googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${destinationLatLng.lat()},${destinationLatLng.lng()}`;
@@ -39,9 +30,18 @@ document.addEventListener('DOMContentLoaded', function() {
             if (confirm("Would you like to get directions in Google Maps?")) {
                 window.open(googleMapsUrl, '_blank');
             } else {
-                window.open(appleMapsUrl, '_blank');
+                // Do nothing on cancel
             }
         });
+        // Add Traffic Layer
+        var trafficLayer = new google.maps.TrafficLayer();
+        trafficLayer.setMap(map);
+
+        // Add Transit Layer
+        var transitLayer = new google.maps.TransitLayer();
+        transitLayer.setMap(map);
+
+        
     }
 
     function loadScript(url) {
