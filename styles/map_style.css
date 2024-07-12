@@ -1,86 +1,28 @@
-canvas{
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    
+/* Background and container styles */
+body {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
-.html{
-    overflow-x: hidden;
+.container {
+    margin-bottom: 0; /* Reduce bottom margin */
+    padding-bottom: 0; /* Reduce bottom padding */
 }
-main{
-    width: 100vw;
-    z-index: 2;
-    position: absolute;
-    width: 100%;
-    margin: 0px auto;
-    padding: 120px 0px;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
+.navbar {
+    margin-bottom: 0; /* Remove bottom margin from navbar */
+}
+.row.banner {
+    margin-bottom: 0; /* Reduce bottom margin */
+}
+.location {
+    margin-top: 20px; /* Reduce top margin */
 }
 
-.fixed-top {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    background-color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-#hero {
-    background: url('assets/bricks.jpg') center center/cover no-repeat;
-    /* linear-gradient(to bottom right, #c68c53, #e0b589); Soft brown gradient */
-    color: #fefcfc; /* Dark text color */
-    width: 50vw;
-    height: 100vh;
-    margin: 0 ;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
     padding: 0;
-    border-radius: 20px; /* Soften edges */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    line-height: 1.5;
-    display: flex;
-    flex-direction: column;
-    justify-content: auto; /* Center vertically */
-    align-items: center;
+    background: url('../assets/background_img3.jpg') no-repeat center center fixed;
+    color: #333;
 }
-
-@keyframes moveUpDown {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-.title {
-    font-family: "Great Vibes", cursive;
-    font-style: regular;
-    font-weight:bolder;
-    font-size: 70px;
-    color: rgb(52, 23, 23);
-    text-shadow: 8px 8px 8px rgba(209, 18, 18, 0.5);
-    animation: moveUpDown 2s infinite;
-}
-.sub-title{
-    font-family: "Great Vibes", cursive;
-    font-style: regular;
-    font-weight: 400;
-    font-size: 50px;
-    color: rgb(248, 247, 247);
-    animation: moveUpDown 2s infinite;
-}
-
-@media (max-width: 768px) {
-    .title {
-        font-size: 30px; /* Adjust font size for smaller screens */
-    }
-}
-section {
-    grid-column: 2 / 8;
-    padding: 1 rem;
-}
-
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
@@ -193,18 +135,17 @@ section {
   font-size: 16px;
   border: none;
   cursor: pointer;
+
   background: none;
-  z-index: 100;
 }
 
 .dropdown-share {
-  background-color: #b96e4ba3 ;
+  background-color: #ff4bffa3 ;
   position: relative;
   display: inline-block;
 
   border-radius: 50px;
   transition: 0.2s;
-  z-index: 100;
 }
 
 .dropdown-share:hover {
@@ -215,11 +156,11 @@ section {
   display: none;
   position: absolute;
   background-color: #f1f1f1;
-  z-index: 3;
+  z-index: 1;
 }
 
 .dropdown-content button {
-  color: rgb(251, 245, 245);
+  color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
@@ -239,10 +180,84 @@ section {
   background-color: gray;
   cursor: pointer;
 }
-
 .button-icon {
-  font-size: 1.5rem;
-  color: pink;
-  width: 100%;
+    font-size: 1.5rem;
+    color: pink;
+    width: 100%;
+  }
+  
+.container {
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    border-radius: 8px;
+    padding: 20px;
 }
 
+/* Toggle music button styles */
+.explore-button {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: linear-gradient(45deg, #ff6b6b, #f06595, #cc65e1);
+    color: white;
+    border: none;
+    padding: 0.75em 1.5em;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.explore-button:hover {
+    background: linear-gradient(45deg, #ff6b6b, #f06595, #8f65e1);
+    transform: scale(1.05);
+}
+
+.explore-button:active {
+    transform: scale(0.95);
+}
+
+/* Banner styles */
+.banner {
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    flex-wrap: wrap;
+}
+
+.banner-content h1 {
+    font-size: 2.5em;
+}
+
+.banner-content p {
+    font-size: 1.2em;
+}
+
+/* Location styles */
+.location {
+    margin: 2em 0;
+}
+
+#map {
+    margin: 1em 0;
+}
+
+#user-address {
+    padding: 0.5em;
+}
+
+#travel-mode {
+    padding: 0.5em;
+    margin-left: 1em;
+}
+
+#check-route {
+    padding: 0.5em 1em;
+    margin-left: 1em;
+}
+
+#travel-info {
+    margin-top: 1em;
+}
