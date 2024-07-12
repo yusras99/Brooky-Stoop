@@ -2,7 +2,7 @@ import '../styles/style.css'
 import * as THREE from "three";
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls';
 
-let scene, camera, renderer, brownstoneTexture, box,ball, shirt, controls;
+let scene, camera, renderer, brownstoneTexture, box,ball, shirt, controls,donut;
 
 function addStar(){
 	const starGeometry = new THREE.SphereGeometry(0.25,24,24);
@@ -66,36 +66,6 @@ function addBox(){
 	box.add(edges);
 }
 
-function makeElementObject(type, width, height) {
-	const obj = new THREE.Object3D
-  
-	const element = document.createElement( type );
-	element.style.width = width+'px';
-	element.style.height = height+'px';
-	element.style.opacity = 0.999;
-  
-	var css3dObject = new THREE.CSS3DObject( element );
-	obj.css3dObject = css3dObject
-	obj.add(css3dObject)
-  
-	// make an invisible plane for the DOM element to chop
-	// clip a WebGL geometry with it.
-	var material = new THREE.MeshPhongMaterial({
-	  opacity	: 0,
-	  color	: new THREE.Color( 0x02A0FE ),
-	  blending: THREE.NoBlending
-	});
-  
-	var geometry = new THREE.BoxGeometry( width, height, 1 );
-	var mesh = new THREE.Mesh( geometry, material );
-	mesh.castShadow = true;
-	mesh.receiveShadow = true;
-	obj.lightShadowMesh = mesh
-	obj.add( mesh );
-  
-	return obj
-  }
-
 function init(){
 	// Scene
 	scene = new THREE.Scene();
@@ -129,14 +99,7 @@ function init(){
 	Array(100).fill().forEach(addShirt);
 	Array(100).fill().forEach(addBall);
 	Array(100).fill().forEach(addBox);
-
-	// const button = makeElementObject('button', 700, 200)    
-	// button.css3dObject.element.textContent = "Click me!"
-	// button.css3dObject.element.style.fontSize = '100px'
-	// button.css3dObject.element.addEventListener('click', () => alert('Button clicked!'))
-	// button.position.y = -3440
-	// button.position.z = -490
-	// button.position.x = -2700
+	Array(100).fill().forEach(addDonuts);
 
 	// update camera position by listening to dom events by mouse
 	controls = new OrbitControls(camera,renderer.domElement);
@@ -148,12 +111,7 @@ function init(){
 function animate() {
     requestAnimationFrame(animate); // Request next animation frame
 
-    // Rotate the box if it exists
-    if (box) {
-        box.rotation.y += 0.01; // Rotate box around Y axis
-    }
-
-    // Rotate shirts if they exist
+    // Rotate objects if they exist
     scene.traverse((child) => {
         if (child instanceof THREE.Mesh && child.userData.type === 'shirt'||
 			child instanceof THREE.Mesh && child.userData.type === 'star' ||

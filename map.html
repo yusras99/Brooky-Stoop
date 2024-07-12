@@ -10,99 +10,86 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
-    <header id="header" class="fixed-top">
-        <nav id="navbar" class="navbar">
-          <ul>
-            <li><a class="nav-link scrollto active" href="index.html">Home</a></li>
-            <li><a class="nav-link scrollto" href="map.html">Location</a></li>
-            <li><a class="nav-link scrollto" href="#products">Products</a></li>
-            <audio id="background-music" loop>
+          <audio id="background-music" loop>
               <source src="assets/music.mp3" type="audio/mp3">
               <!-- Music by: https://www.bensound.com/free-music-for-videos -->
           </audio>
           <button class="btn btn-primary explore-button" onclick="toggleMusic()">
               <i class="bi bi-music-note-beamed"></i> Toggle Music
           </button>
+          <div class="button-container">
+            <button class="home-btn"><a href="index.html">Home</a></button>
+            <button class="products-btn">Product Library</button>
             <div class="dropdown-share">
-              <button class="dropbtn">Share with your friends!</button>
-              <div id="myDropdown" class="dropdown-content">
+                <button class="dropbtn">Share with your friends!</button>
+                <div id="myDropdown" class="dropdown-content">
                 <button
-                  class="button-share"
-                  data-sharer="facebook"
-                  data-hashtag="stoopsale,nyc,brooklyn"
-                  data-title="Checkout this stoop sale!"
+                    class="button-share"
+                    data-sharer="facebook"
+                    data-hashtag="stoopsale,nyc,brooklyn"
+                    data-title="Checkout this stoop sale!"
                 >
-                  <i class="bi bi-facebook button-icon"></i>
+                    <i class="bi bi-facebook button-icon"></i>
                 </button>
                 <button
-                  class="button-share"
-                  data-sharer="x"
-                  data-hashtags="stoopsale,nyc,brooklyn"
-                  data-title="Checkout this stoop sale!"
+                    class="button-share"
+                    data-sharer="x"
+                    data-hashtags="stoopsale,nyc,brooklyn"
+                    data-title="Checkout this stoop sale!"
                 >
-                  <i class="bi bi-twitter button-icon"></i>
+                    <i class="bi bi-twitter button-icon"></i>
                 </button>
                 <button
-                  class="button-share"
-                  data-sharer="threads"
-                  data-title="Checkout this stoop sale!"
+                    class="button-share"
+                    data-sharer="threads"
+                    data-title="Checkout this stoop sale!"
                 >
-                  <i class="bi bi-threads button-icon"></i>
+                    <i class="bi bi-threads button-icon"></i>
                 </button>
                 <button
-                  class="button-share"
-                  data-sharer="linkedin"
-                  data-title="Checkout this stoop sale!"
+                    class="button-share"
+                    data-sharer="linkedin"
+                    data-title="Checkout this stoop sale!"
                 >
-                  <i class="bi bi-linkedin button-icon"></i>
+                    <i class="bi bi-linkedin button-icon"></i>
                 </button>
                 <button
-                  class="button-share"
-                  data-sharer="email"
-                  data-title="Checkout this stoop sale!"
-                  data-subject="Brooklyn Stoop Sale!"
-                  data-to="some@email.com"
+                    class="button-share"
+                    data-sharer="email"
+                    data-title="Checkout this stoop sale!"
+                    data-subject="Brooklyn Stoop Sale!"
+                    data-to="some@email.com"
                 >
-                  <i class="bi bi-envelope button-icon"></i>
+                    <i class="bi bi-envelope button-icon"></i>
                 </button>
                 <button
-                  class="button-share"
-                  data-sharer="telegram"
-                  data-title="Checkout this stoop sale!"
+                    class="button-share"
+                    data-sharer="telegram"
+                    data-title="Checkout this stoop sale!"
                 >
-                  <i class="bi bi-telegram button-icon"></i>
+                    <i class="bi bi-telegram button-icon"></i>
                 </button>
                 <button
-                  class="button-share"
-                  data-sharer="pinterest"
-                  data-title="Checkout this stoop sale!"
+                    class="button-share"
+                    data-sharer="pinterest"
+                    data-title="Checkout this stoop sale!"
                 >
-                  <i class="bi bi-pinterest button-icon"></i>
+                    <i class="bi bi-pinterest button-icon"></i>
                 </button>
                 <button
-                  class="button-share"
-                  data-sharer="reddit"
-                  data-title="Checkout this stoop sale!"
+                    class="button-share"
+                    data-sharer="reddit"
+                    data-title="Checkout this stoop sale!"
                 >
-                  <i class="bi bi-reddit button-icon"></i>
+                    <i class="bi bi-reddit button-icon"></i>
                 </button>
-              </div>
+                </div> 
             </div>
+        </div>
 
             <script src="./src/dropdown.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.2/sharer.min.js"></script>
 
-            <!-- <li class="dropdown">
-                            <a class="nav-link scrollto">Location</a>
-                            <ul>
-                                <li><a class="nav-link scrollto" href="#">Map</a></li>
-                                <li><a class="nav-link scrollto" href="#"></a></li>
-                            </ul>
-                        </li> -->
-          </ul>
-          <i class="bi bi-list mobile-nav-toggle"></i>
-        </nav>
-      </header>
     <div class="container mt-5">
         <div class="row banner">
             <div class="col-md-6">

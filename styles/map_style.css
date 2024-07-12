@@ -23,129 +23,54 @@ body {
     background: url('../assets/background_img3.jpg') no-repeat center center fixed;
     color: #333;
 }
-/*--------------------------------------------------------------
-# Navigation Menu
---------------------------------------------------------------*/
-/* The navbar container */
-.navbar {
-    padding: 0;
-    position: relative;
-    z-index: 1000;
-    background-color: rgba(165, 139, 54, 0.752);
-}
 
-/* Style the list container */
-.navbar ul {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    list-style: none;
+.button-container {
+    display: flex; /* for horizontal layout */
     align-items: center;
 }
-
-/* Style each element in the list */
-.navbar li {
+.home-btn, .products-btn{
+    top: 10px;
+    left: 10px;
+    padding: 16px;
+    font-size: 1em;
+    font-weight: bold;
+    color: white;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(45deg, #ff6b6b, #f06595, #cc65e1);
     position: relative;
+    display: inline-block;
+
+    border-radius: 50px;
+    transition: 0.2s;
+    z-index: 100;
+    text-decoration: none !important;
+    color: inherit;
 }
-
-.navbar>ul>li {
-    white-space: nowrap;
-    padding: 10px 20px;
-}
-
-/* The style for all a tags within navbar */
-.navbar a,
-.navbar a:focus {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: #521d1d;
-    font-size: 16px;
-    font-weight: 600;
-    padding: 10px;
-    white-space: nowrap;
-    transition: 0.3s;
-    letter-spacing: 0.4px;
-    position: relative;
-    text-transform: uppercase;
-}
-
-/* Underline on hover */
-.navbar>ul>li>a:before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: -6px;
-    left: 0;
-    width: 0;
-    background-color: #ce0c0c;
-    visibility: hidden;
-    transition: all 0.3s ease-in-out 0s;
-}
-
-/* Makes the underline visible when hovered over */
-.navbar a:hover:before,
-.navbar li:hover>a:before,
-.navbar .active:before {
-    visibility: visible;
-    width: 80%;
-}
-
-/* The dropdown styling */
-.navbar .dropdown ul {
-    display: none;
-    position: absolute;
-    left: 0;
-    top: 100%;
-    margin: 0;
-    padding: 10px 0;
-    z-index: 99;
-    background: #fff;
-    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
-    transition: 0.3s;
-}
-
-.navbar .dropdown ul li {
-    min-width: 200px;
-}
-
-.navbar .dropdown ul a {
-    padding: 10px 20px;
-    font-size: 14px;
-    text-transform: none;
-    color: #4e4e4e;
-}
-
-/* Change the color of text in dropdown when hovered over */
-.navbar .dropdown ul a:hover,
-.navbar .dropdown ul .active:hover,
-.navbar .dropdown ul li:hover>a {
-    color: #ea9191;
-}
-
-/* Show dropdown on hover */
-.navbar .dropdown:hover>ul {
-    display: block;
-}
-
-
+.location-btn:hover {
+    box-shadow: 6px 6px rgba(0, 0, 0); 
+  }
 .dropbtn {
   padding: 16px;
-  font-size: 16px;
+  font-size: 1em;
+  font-weight: bold;
+  color: white;
   border: none;
   cursor: pointer;
-
   background: none;
+  z-index: 100;
 }
 
 .dropdown-share {
-  background-color: #ff4bffa3 ;
+  background: linear-gradient(45deg, #ff6b6b, #f06595, #cc65e1);
+  top: 10px;
+  left: 10px;
   position: relative;
   display: inline-block;
 
   border-radius: 50px;
   transition: 0.2s;
+  z-index: 100;
 }
 
 .dropdown-share:hover {
@@ -156,11 +81,11 @@ body {
   display: none;
   position: absolute;
   background-color: #f1f1f1;
-  z-index: 1;
+  z-index: 3;
 }
 
 .dropdown-content button {
-  color: black;
+  color: rgb(251, 245, 245);
   padding: 12px 16px;
   text-decoration: none;
   display: block;
@@ -180,11 +105,13 @@ body {
   background-color: gray;
   cursor: pointer;
 }
+
+
 .button-icon {
-    font-size: 1.5rem;
-    color: pink;
-    width: 100%;
-  }
+  font-size: 1.5rem;
+  color: pink;
+  width: 100%;
+}
   
 .container {
     background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
