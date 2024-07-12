@@ -2,7 +2,7 @@ import '../styles/style.css'
 import * as THREE from "three";
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls';
 
-let scene, camera, renderer, brownstoneTexture, box,ball, shirt, controls,donut;
+let scene, camera, renderer, brownstoneTexture, box,ball, shirt, controls;
 
 function addStar(){
 	const starGeometry = new THREE.SphereGeometry(0.25,24,24);
@@ -36,7 +36,7 @@ function addBall(){
 	// Add ball
 	const ballGeometry = new THREE.SphereGeometry(1, 32, 32);
 	const ballMaterial = new THREE.MeshPhongMaterial({
-		map : new THREE.TextureLoader().load('assets/ball.png')
+		map : new THREE.TextureLoader().load('assets/ball.jpg')
 	})
 	ball = new THREE.Mesh(ballGeometry,ballMaterial);
 
@@ -99,7 +99,6 @@ function init(){
 	Array(100).fill().forEach(addShirt);
 	Array(100).fill().forEach(addBall);
 	Array(100).fill().forEach(addBox);
-	Array(100).fill().forEach(addDonuts);
 
 	// update camera position by listening to dom events by mouse
 	controls = new OrbitControls(camera,renderer.domElement);
