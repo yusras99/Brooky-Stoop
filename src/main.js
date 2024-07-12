@@ -126,27 +126,6 @@ function animate() {
         }
     });
 
-    // // Rotate balls if they exist
-    // scene.traverse((child) => {
-    //     if (child instanceof THREE.Mesh && child.userData.type === 'ball') {
-    //         child.rotation.y += 0.01; // Rotate ball around Y axis
-    //     }
-    // });
-
-    // // Rotate stars if they exist
-    // scene.traverse((child) => {
-    //     if (child instanceof THREE.Mesh && child.userData.type === 'star') {
-    //         child.rotation.y += 0.01; // Rotate star around Y axis
-    //     }
-    // });
-
-	// // Rotate boxes if they exist
-    // scene.traverse((child) => {
-    //     if (child instanceof THREE.Mesh && child.userData.type === 'box') {
-    //         child.rotation.y += 0.01; // Rotate star around Y axis
-    //     }
-    // });
-
     controls.update(); // Update orbit controls
 
     renderer.render(scene, camera); // Render the scene
