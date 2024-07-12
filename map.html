@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brooklyn Stoop Sale Map</title>
+    <link rel="stylesheet" href="style.css">
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8BJJj8x4zEwK6k0TpG287fy9-kJetIqE&callback=initMap&libraries=places,directions"></script>
+</head>
+<body>
+    <script type="module" src="./src/map.js"></script>
+    <nav id="navbar" class="navbar">
+        <ul>
+            <li><a class="nav-link scrollto" href="index.html">Products</a></li>
+            <li><a class="nav-link scrollto active" href="map.html">Location</a></li>
+           
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav>
+    <div class="container">
+        <h1>Brooklyn Stoop Sale</h1>
+        <p>Join us for a fun day of shopping and good vibes!</p>
+
+        <div class="location">
+            <h2>Location</h2>
+            <p>2nd Pl & Court St, Brooklyn, NY 11231</p>
+            <div id="map" style="height: 400px; width: 100%;"></div>
+            <div>
+                <input id="user-address" type="text" placeholder="Enter your address">
+                <select id="travel-mode">
+                    <option value="DRIVING">Driving</option>
+                    <option value="WALKING">Walking</option>
+                    <option value="BICYCLING">Bicycling</option>
+                    <option value="TRANSIT">Transit</option>
+                </select>
+                <button id="check-route">Check Route</button>
+            </div>
+            <div id="travel-info" style="margin-top: 10px;"></div>
+        </div>
+    </div>
+</body>
+</html>
