@@ -10,29 +10,99 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
-    <audio id="background-music" loop>
-        <source src="assets/music.mp3" type="audio/mp3">
-        <!-- Music by: https://www.bensound.com/free-music-for-videos -->
-    </audio>
-    <button class="btn btn-primary explore-button" onclick="toggleMusic()">
-        <i class="bi bi-music-note-beamed"></i> Toggle Music
-    </button>
-    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Stoop Sale Brooklyn</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Products</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="map.html">Location</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <header id="header" class="fixed-top">
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li><a class="nav-link scrollto active" href="index.html">Home</a></li>
+            <li><a class="nav-link scrollto" href="map.html">Location</a></li>
+            <li><a class="nav-link scrollto" href="#products">Products</a></li>
+            <audio id="background-music" loop>
+              <source src="assets/music.mp3" type="audio/mp3">
+              <!-- Music by: https://www.bensound.com/free-music-for-videos -->
+          </audio>
+          <button class="btn btn-primary explore-button" onclick="toggleMusic()">
+              <i class="bi bi-music-note-beamed"></i> Toggle Music
+          </button>
+            <div class="dropdown-share">
+              <button class="dropbtn">Share with your friends!</button>
+              <div id="myDropdown" class="dropdown-content">
+                <button
+                  class="button-share"
+                  data-sharer="facebook"
+                  data-hashtag="stoopsale,nyc,brooklyn"
+                  data-title="Checkout this stoop sale!"
+                >
+                  <i class="bi bi-facebook button-icon"></i>
+                </button>
+                <button
+                  class="button-share"
+                  data-sharer="x"
+                  data-hashtags="stoopsale,nyc,brooklyn"
+                  data-title="Checkout this stoop sale!"
+                >
+                  <i class="bi bi-twitter button-icon"></i>
+                </button>
+                <button
+                  class="button-share"
+                  data-sharer="threads"
+                  data-title="Checkout this stoop sale!"
+                >
+                  <i class="bi bi-threads button-icon"></i>
+                </button>
+                <button
+                  class="button-share"
+                  data-sharer="linkedin"
+                  data-title="Checkout this stoop sale!"
+                >
+                  <i class="bi bi-linkedin button-icon"></i>
+                </button>
+                <button
+                  class="button-share"
+                  data-sharer="email"
+                  data-title="Checkout this stoop sale!"
+                  data-subject="Brooklyn Stoop Sale!"
+                  data-to="some@email.com"
+                >
+                  <i class="bi bi-envelope button-icon"></i>
+                </button>
+                <button
+                  class="button-share"
+                  data-sharer="telegram"
+                  data-title="Checkout this stoop sale!"
+                >
+                  <i class="bi bi-telegram button-icon"></i>
+                </button>
+                <button
+                  class="button-share"
+                  data-sharer="pinterest"
+                  data-title="Checkout this stoop sale!"
+                >
+                  <i class="bi bi-pinterest button-icon"></i>
+                </button>
+                <button
+                  class="button-share"
+                  data-sharer="reddit"
+                  data-title="Checkout this stoop sale!"
+                >
+                  <i class="bi bi-reddit button-icon"></i>
+                </button>
+              </div>
+            </div>
+
+            <script src="./src/dropdown.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.2/sharer.min.js"></script>
+
+            <!-- <li class="dropdown">
+                            <a class="nav-link scrollto">Location</a>
+                            <ul>
+                                <li><a class="nav-link scrollto" href="#">Map</a></li>
+                                <li><a class="nav-link scrollto" href="#"></a></li>
+                            </ul>
+                        </li> -->
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+      </header>
     <div class="container mt-5">
         <div class="row banner">
             <div class="col-md-6">
@@ -44,19 +114,21 @@
                 <p>Date: August 10, 2024</p>
                 <p>Time: 10:00 AM - 4:00 PM</p>
                 <p>Location: 2nd Pl & Court St, Brooklyn, NY 11231</p>
+                <div class="location mt-4">
+                    <h2>Location</h2>
+                    <p>2nd Pl & Court St, Brooklyn, NY 11231</p>
+                    <div id="map" style="height: 400px; width: 100%;"></div>
+                </div>
             </div>
         </div>
-        <div class="location mt-5">
-            <h2>Location</h2>
-            <p>2nd Pl & Court St, Brooklyn, NY 11231</p>
-            <div id="map" style="height: 400px; width: 100%;"></div>
-        </div>
     </div>
+    
+    </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="src/script.js"></script>
     <script src="src/map.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8BJJj8x4zEwK6k0TpG287fy9-kJetIqE&callback=initMap&libraries=places,directions"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&libraries=places,directions"></script>
 </body>
 </html>

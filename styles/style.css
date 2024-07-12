@@ -219,9 +219,35 @@ section {
   cursor: pointer;
 }
 
+
 .button-icon {
   font-size: 1.5rem;
   color: pink;
   width: 100%;
 }
+/* Toggle music button styles */
+.explore-button {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: linear-gradient(45deg, #ff6b6b, #f06595, #cc65e1);
+    color: white;
+    border: none;
+    padding: 0.75em 1.5em;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: background 0.3s, transform 0.3s;
+}
 
+.explore-button:hover {
+    background: linear-gradient(45deg, #ff6b6b, #f06595, #8f65e1);
+    transform: scale(1.05);
+}
+
+.explore-button:active {
+    transform: scale(0.95);
+}
