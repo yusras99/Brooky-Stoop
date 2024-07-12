@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     var map;
     var destination = { lat: 40.681368, lng: -73.996062 }; // 2nd Pl & Court St, Brooklyn coordinates
-    var customIcon = '../assets/marker.png'; // Path to custom marker image
+    var customIcon = 'assets/shopping-bag.png'; // Path to custom marker image
 
     function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (confirm("Would you like to get directions in Google Maps?")) {
                 window.open(googleMapsUrl, '_blank');
             } else {
-                window.open(appleMapsUrl, '_blank');
+                // Do nothing on cancel
             }
         });
     }
