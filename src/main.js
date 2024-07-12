@@ -4,6 +4,7 @@ import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls';
 
 let scene, camera, renderer, brownstoneTexture, box,ball, shirt, controls;
 
+
 function addStar(){
 	const starGeometry = new THREE.SphereGeometry(0.25,24,24);
 	const starMaterial = new THREE.MeshStandardMaterial({color: 0xffffff,
