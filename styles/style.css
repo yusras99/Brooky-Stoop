@@ -1,7 +1,64 @@
-body {
-    margin: 0px;
-    overflow: hidden;
-    /* position: relative; Ensure relative positioning for absolute children */
+canvas{
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+main{
+    width: 100vw;
+    z-index: 99;
+    position: absolute;
+    width: 100%;
+    margin: 0px auto;
+    padding: 120px 0px;
+
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.fixed-top {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#hero {
+    background: linear-gradient(to bottom right, #c68c53, #e0b589); /* Soft brown gradient */
+    color: #3d3d3d; /* Dark text color */
+    padding: 50px;
+    text-align: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 20px; /* Soften edges */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    font-family: Arial, Helvetica, sans-serif; /* Choose a suitable font */
+    font-size: 24px;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: center;
+}
+
+.title {
+    grid-column: 2 / span 5;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight:bolder;
+    font-size: 60px;
+    color: rgb(105, 86, 86);
+    text-shadow: 8px 8px 8px rgba(209, 18, 18, 0.5);
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 30px; /* Adjust font size for smaller screens */
+    }
+}
+section {
+    grid-column: 2 / 8;
+    padding: 1 rem;
 }
 
 /*--------------------------------------------------------------
@@ -110,35 +167,6 @@ body {
     display: block;
 }
 
-
-
-
-
-
-
-.title {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 100; /* Ensure the heading appears above other content */
-    background: transparent;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight:bolder;
-    font-size: 80px;
-    color: rgb(105, 86, 86);
-    text-shadow: 8px 8px 8px rgba(209, 18, 18, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    white-space: nowrap; /* Ensure text does not wrap */
-}
-
-@media (max-width: 768px) {
-    .title {
-        font-size: 30px; /* Adjust font size for smaller screens */
-    }
-}
 
 .dropbtn {
   padding: 16px;
