@@ -17,7 +17,7 @@ canvas{
 main{
     width: 100vw;
     z-index: 2;
-    position: absolute;
+    position: relative;
     width: 100%;
     margin: 0px auto;
 }
@@ -29,7 +29,7 @@ main{
     color: #fefcfc; /* Dark text color */
     width: 50vw;
     height: 100vh;
-    margin: 0 ;
+    margin: 15px;
     padding: 0;
     border-radius: 20px; /* Soften edges */
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -187,6 +187,21 @@ section {
 
 .explore-button:active {
     transform: scale(0.95);
+}
+
+
+#products {
+  position: relative;  
+  z-index: 2;
+}
+
+.products-header {
+  background-color: #fff;
+  width: 100%;
+  padding: 16px;
+  margin: 0;
+  text-align: center;
+  font-size: 4em;
 }
 
 .container {
