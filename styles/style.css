@@ -8,15 +8,13 @@ canvas{
 .html{
     overflow-x: hidden;
 }
+
 main{
     width: 100vw;
     z-index: 2;
     position: absolute;
     width: 100%;
     margin: 0px auto;
-    padding: 120px 0px;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
 }
 
 
