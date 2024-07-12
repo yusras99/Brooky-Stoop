@@ -6,23 +6,39 @@
         <link rel="stylesheet" href="style.css">
 	</head>
 	<body>
-		<script type = "module" src="./src/main.js"></script>
-        <nav id="navbar" class="navbar">
-            <ul>
-              <li><a class="nav-link scrollto active">Products</a></li>
-              <li><a class="nav-link scrollto" >Location</a></li>
-              <li class="dropdown">
-                <a class="nav-link scrollto" >Location</a>
-                <ul>
-                  <li><a class="nav-link scrollto" href="#">Map</a></li>
-                  <li><a class="nav-link scrollto" href="#"></a></li>
-                </ul>
-              </li>
-            </ul>
-            <i class="bi bi-list mobile-nav-toggle"></i>
-        </nav>
-        <div class ="title">
-            Stoop Sale Brooklyn
-        </div>
+        <canvas id = "bg"></canvas>
+        <script type = "module" src="./src/main.js"></script>
+        <main>
+            <header id="header" class="fixed-top">
+                <nav id="navbar" class="navbar">
+                    <ul>
+                        <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                        <li><a class="nav-link scrollto" href="#products">Products</a></li>
+                        <li class="dropdown">
+                            <a class="nav-link scrollto">Location</a>
+                            <ul>
+                                <li><a class="nav-link scrollto" href="#">Map</a></li>
+                                <li><a class="nav-link scrollto" href="#"></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <i class="bi bi-list mobile-nav-toggle"></i>
+                </nav>
+            </header>
+        
+            <section id="hero">
+                <div class="title">
+                    Stoop Sale Brooklyn!!
+                    <br>
+                    Your trash...
+                    <br>
+                    Someone else's treasure.
+                </div>
+            </section>
+        
+            <section id="products">
+                
+            </section>
+        </main>
     </body>
-</html>
+    </html>
