@@ -1,0 +1,84 @@
+/* Background and container styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('../assets/background_img3.jpg') no-repeat center center fixed;
+    color: #333;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    border-radius: 8px;
+    padding: 20px;
+}
+
+/* Toggle music button styles */
+.explore-button {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: linear-gradient(45deg, #ff6b6b, #f06595, #cc65e1);
+    color: white;
+    border: none;
+    padding: 0.75em 1.5em;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.explore-button:hover {
+    background: linear-gradient(45deg, #ff6b6b, #f06595, #8f65e1);
+    transform: scale(1.05);
+}
+
+.explore-button:active {
+    transform: scale(0.95);
+}
+
+/* Banner styles */
+.banner {
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    flex-wrap: wrap;
+}
+
+.banner-content h1 {
+    font-size: 2.5em;
+}
+
+.banner-content p {
+    font-size: 1.2em;
+}
+
+/* Location styles */
+.location {
+    margin: 2em 0;
+}
+
+#map {
+    margin: 1em 0;
+}
+
+#user-address {
+    padding: 0.5em;
+}
+
+#travel-mode {
+    padding: 0.5em;
+    margin-left: 1em;
+}
+
+#check-route {
+    padding: 0.5em 1em;
+    margin-left: 1em;
+}
+
+#travel-info {
+    margin-top: 1em;
+}

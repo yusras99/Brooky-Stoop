@@ -1,34 +1,49 @@
 document.addEventListener('DOMContentLoaded', function() {
     var map;
-    var directionsService;
-    var directionsRenderer;
-    var autocomplete;
+    var destination = { lat: 40.681368, lng: -73.996062 }; // 2nd Pl & Court St, Brooklyn coordinates
+    var customIcon = '../assets/marker.png'; // Path to custom marker image
 
-    // Initialize map
     function initMap() {
-        var brooklynLocation = { lat: 40.681368, lng: -73.996062 }; // 2nd Pl & Court St, Brooklyn coordinates
         map = new google.maps.Map(document.getElementById('map'), {
             zoom: 15,
-            center: brooklynLocation
+            center: destination,
+            streetViewControl: true, // Enable Street View control
+            mapTypeControl: true, // Enable map type control (e.g., satellite view)
         });
 
-        // Add marker at the Brooklyn location
+        // Add custom marker at the Brooklyn location
         var marker = new google.maps.Marker({
-            position: brooklynLocation,
+            position: destination,
             map: map,
-            title: '2nd Pl & Court St, Brooklyn, NY'
+            title: '2nd Pl & Court St, Brooklyn, NY',
+            icon: {
+                url: customIcon,
+                scaledSize: new google.maps.Size(50, 50), // Adjust size as needed
+            }
         });
 
-        directionsService = new google.maps.DirectionsService();
-        directionsRenderer = new google.maps.DirectionsRenderer();
-        directionsRenderer.setMap(map);
+        // Add Traffic Layer
+        var trafficLayer = new google.maps.TrafficLayer();
+        trafficLayer.setMap(map);
 
-        // Initialize autocomplete
-        var input = document.getElementById('user-address');
-        autocomplete = new google.maps.places.Autocomplete(input);
+        // Add Transit Layer
+        var transitLayer = new google.maps.TransitLayer();
+        transitLayer.setMap(map);
+
+        // Add click event listener to the map
+        map.addListener('click', function() {
+            var destinationLatLng = new google.maps.LatLng(destination.lat, destination.lng);
+            var googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${destinationLatLng.lat()},${destinationLatLng.lng()}`;
+            var appleMapsUrl = `http://maps.apple.com/?daddr=${destinationLatLng.lat()},${destinationLatLng.lng()}`;
+
+            if (confirm("Would you like to get directions in Google Maps?")) {
+                window.open(googleMapsUrl, '_blank');
+            } else {
+                window.open(appleMapsUrl, '_blank');
+            }
+        });
     }
 
-    // Load Google Maps script dynamically
     function loadScript(url) {
         var script = document.createElement('script');
         script.type = 'text/javascript';
@@ -39,33 +54,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
     window.initMap = initMap;
     loadScript('https://maps.googleapis.com/maps/api/js?key=AIzaSyD8BJJj8x4zEwK6k0TpG287fy9-kJetIqE&callback=initMap&libraries=places,directions');
-
-    // Calculate route from user address to Brooklyn location
-    document.getElementById('check-route').addEventListener('click', function() {
-        var userAddress = document.getElementById('user-address').value;
-        var travelMode = document.getElementById('travel-mode').value;
-        calculateRoute(userAddress, { lat: 40.681368, lng: -73.996062 }, travelMode);
-    });
-
-    function calculateRoute(origin, destination, travelMode) {
-        var request = {
-            origin: origin,
-            destination: destination,
-            travelMode: travelMode
-        };
-        directionsService.route(request, function(result, status) {
-            if (status == 'OK') {
-                directionsRenderer.setDirections(result);
-                displayTravelInfo(result);
-            } else {
-                alert('Directions request failed due to ' + status);
-            }
-        });
-    }
-
-    function displayTravelInfo(result) {
-        var leg = result.routes[0].legs[0];
-        var travelInfo = 'Estimated travel time: ' + leg.duration.text + ' (' + leg.distance.text + ')';
-        document.getElementById('travel-info').innerText = travelInfo;
-    }
 });
