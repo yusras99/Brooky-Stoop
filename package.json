@@ -14,5 +14,6 @@
     "devDependencies": {
         "@types/three": "^0.166.0",
         "vite": "^5.3.3"
-    }
+    },
+    "homepage": "https://yusras99.github.io/Brooky-Stoop/"
 }
