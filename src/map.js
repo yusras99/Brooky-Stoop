@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     var map;
     var destination = { lat: 40.681368, lng: -73.996062 }; // 2nd Pl & Court St, Brooklyn coordinates
-    var customIcon = 'assets/shopping-bag.png'; // Path to custom marker image
+    var customIcon = '../assets/marker.png'; // Path to custom marker image
 
     function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
@@ -22,15 +22,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        // Add Traffic Layer
-        var trafficLayer = new google.maps.TrafficLayer();
-        trafficLayer.setMap(map);
-
-        // Add Transit Layer
-        var transitLayer = new google.maps.TransitLayer();
-        transitLayer.setMap(map);
-
-        // Add click event listener to the map
         map.addListener('click', function() {
             var destinationLatLng = new google.maps.LatLng(destination.lat, destination.lng);
             var googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${destinationLatLng.lat()},${destinationLatLng.lng()}`;
@@ -42,6 +33,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Do nothing on cancel
             }
         });
+        // Add Traffic Layer
+        var trafficLayer = new google.maps.TrafficLayer();
+        trafficLayer.setMap(map);
+
+        // Add Transit Layer
+        var transitLayer = new google.maps.TransitLayer();
+        transitLayer.setMap(map);
+
+        
     }
 
     function loadScript(url) {
