@@ -164,3 +164,91 @@ section {
 .navbar .dropdown:hover>ul {
     display: block;
 }
+
+
+
+
+
+
+
+.title {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100; /* Ensure the heading appears above other content */
+    background: transparent;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight:bolder;
+    font-size: 80px;
+    color: rgb(105, 86, 86);
+    text-shadow: 8px 8px 8px rgba(209, 18, 18, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap; /* Ensure text does not wrap */
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 30px; /* Adjust font size for smaller screens */
+    }
+}
+
+.dropbtn {
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+
+  background: none;
+}
+
+.dropdown-share {
+  background-color: #ff4bffa3 ;
+  position: relative;
+  display: inline-block;
+
+  border-radius: 50px;
+  transition: 0.2s;
+}
+
+.dropdown-share:hover {
+  box-shadow: 6px 6px rgba(0, 0, 0); 
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  z-index: 1;
+}
+
+.dropdown-content button {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.show {
+  display: flex;
+}
+
+.button-share {
+  border: none;
+  background-color: black;
+  padding: 0;
+}
+
+.button-share:hover {
+  background-color: gray;
+  cursor: pointer;
+}
+
+.button-icon {
+  font-size: 1.5rem;
+  color: pink;
+  width: 100%;
+}
+
