@@ -50,7 +50,7 @@ function addBall(){
 function addBox(){
 	const boxGeometry = new THREE.BoxGeometry( 2, 2, 2 );
 	const material = new THREE.MeshBasicMaterial( { 
-		color: 0xcd853f,
+		map : new THREE.TextureLoader().load('assets/rubik.jpg')
 	 } );
 	
 	box = new THREE.Mesh( boxGeometry, material );
