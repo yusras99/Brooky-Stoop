@@ -24,7 +24,7 @@ main{
 
 
 #hero {
-    background: url('assets/bricks.jpg') center center/cover no-repeat;
+    background: url('/bricks.jpg') center center/cover no-repeat;
     /* linear-gradient(to bottom right, #c68c53, #e0b589); Soft brown gradient */
     color: #fefcfc; /* Dark text color */
     width: 50vw;

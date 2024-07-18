@@ -1,121 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Brooklyn Stoop Sale | Map" />
+    <meta property="og:image" content="assets/brownStoneTexture.jpg" />
+    <meta property="og:description" content="Stoop Sale Map and Directions" />
+    <meta name="keywords" content="Stoop Sale, Brooklyn, New York City, NYC" />
     <title>Brooklyn Stoop Sale Map</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/map_style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-</head>
-<body>
-          <audio id="background-music" loop>
-              <source src="assets/music.mp3" type="audio/mp3">
-              <!-- Music by: https://www.bensound.com/free-music-for-videos -->
-          </audio>
-          <button class="btn btn-primary explore-button" onclick="toggleMusic()">
-              <i class="bi bi-music-note-beamed"></i> Toggle Music
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="styles/map_style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+  </head>
+  <body>
+    <audio id="background-music" loop>
+      <source src="assets/music.mp3" type="audio/mp3" />
+      <!-- Music by: https://www.bensound.com/free-music-for-videos -->
+    </audio>
+    <button class="btn btn-primary explore-button" id="music-button">
+      <i class="bi bi-music-note-beamed"></i> Toggle Music
+    </button>
+    <div class="button-container">
+      <button class="home-btn"><a href="index.html">Home</a></button>
+      <button class="products-btn">Product Library</button>
+      <div class="dropdown-share">
+        <button class="dropbtn">Share with your friends!</button>
+        <div id="myDropdown" class="dropdown-content">
+          <button
+            class="button-share"
+            data-sharer="facebook"
+            data-hashtag="stoopsale,nyc,brooklyn"
+            data-title="Checkout this stoop sale!"
+          >
+            <i class="bi bi-facebook button-icon"></i>
           </button>
-          <div class="button-container">
-            <button class="home-btn"><a href="index.html">Home</a></button>
-            <button class="products-btn">Product Library</button>
-            <div class="dropdown-share">
-                <button class="dropbtn">Share with your friends!</button>
-                <div id="myDropdown" class="dropdown-content">
-                <button
-                    class="button-share"
-                    data-sharer="facebook"
-                    data-hashtag="stoopsale,nyc,brooklyn"
-                    data-title="Checkout this stoop sale!"
-                >
-                    <i class="bi bi-facebook button-icon"></i>
-                </button>
-                <button
-                    class="button-share"
-                    data-sharer="x"
-                    data-hashtags="stoopsale,nyc,brooklyn"
-                    data-title="Checkout this stoop sale!"
-                >
-                    <i class="bi bi-twitter button-icon"></i>
-                </button>
-                <button
-                    class="button-share"
-                    data-sharer="threads"
-                    data-title="Checkout this stoop sale!"
-                >
-                    <i class="bi bi-threads button-icon"></i>
-                </button>
-                <button
-                    class="button-share"
-                    data-sharer="linkedin"
-                    data-title="Checkout this stoop sale!"
-                >
-                    <i class="bi bi-linkedin button-icon"></i>
-                </button>
-                <button
-                    class="button-share"
-                    data-sharer="email"
-                    data-title="Checkout this stoop sale!"
-                    data-subject="Brooklyn Stoop Sale!"
-                    data-to="some@email.com"
-                >
-                    <i class="bi bi-envelope button-icon"></i>
-                </button>
-                <button
-                    class="button-share"
-                    data-sharer="telegram"
-                    data-title="Checkout this stoop sale!"
-                >
-                    <i class="bi bi-telegram button-icon"></i>
-                </button>
-                <button
-                    class="button-share"
-                    data-sharer="pinterest"
-                    data-title="Checkout this stoop sale!"
-                >
-                    <i class="bi bi-pinterest button-icon"></i>
-                </button>
-                <button
-                    class="button-share"
-                    data-sharer="reddit"
-                    data-title="Checkout this stoop sale!"
-                >
-                    <i class="bi bi-reddit button-icon"></i>
-                </button>
-                </div> 
-            </div>
+          <button
+            class="button-share"
+            data-sharer="x"
+            data-hashtags="stoopsale,nyc,brooklyn"
+            data-title="Checkout this stoop sale!"
+          >
+            <i class="bi bi-twitter button-icon"></i>
+          </button>
+          <button
+            class="button-share"
+            data-sharer="threads"
+            data-title="Checkout this stoop sale!"
+          >
+            <i class="bi bi-threads button-icon"></i>
+          </button>
+          <button
+            class="button-share"
+            data-sharer="linkedin"
+            data-title="Checkout this stoop sale!"
+          >
+            <i class="bi bi-linkedin button-icon"></i>
+          </button>
+          <button
+            class="button-share"
+            data-sharer="email"
+            data-title="Checkout this stoop sale!"
+            data-subject="Brooklyn Stoop Sale!"
+            data-to="some@email.com"
+          >
+            <i class="bi bi-envelope button-icon"></i>
+          </button>
+          <button
+            class="button-share"
+            data-sharer="telegram"
+            data-title="Checkout this stoop sale!"
+          >
+            <i class="bi bi-telegram button-icon"></i>
+          </button>
+          <button
+            class="button-share"
+            data-sharer="pinterest"
+            data-title="Checkout this stoop sale!"
+          >
+            <i class="bi bi-pinterest button-icon"></i>
+          </button>
+          <button
+            class="button-share"
+            data-sharer="reddit"
+            data-title="Checkout this stoop sale!"
+          >
+            <i class="bi bi-reddit button-icon"></i>
+          </button>
         </div>
-
-            <script src="./src/dropdown.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.2/sharer.min.js"></script>
+      </div>
+    </div>
 
     <div class="container mt-5">
-        <div class="row banner">
-            <div class="col-md-6">
-                <img src="assets/stoop_sale.png" alt="Brooklyn Stoop Sale" class="img-fluid animate__animated animate__fadeInLeft">
-            </div>
-            <div class="col-md-6 banner-content animate__animated animate__fadeInRight">
-                <h1>Brooklyn Stoop Sale</h1>
-                <p>Join us for a fun day of shopping and good vibes!</p>
-                <p>Date: August 10, 2024</p>
-                <p>Time: 10:00 AM - 4:00 PM</p>
-                <p>Location: 2nd Pl & Court St, Brooklyn, NY 11231</p>
-                <div class="location mt-4">
-                    <h2>Location</h2>
-                    <p>2nd Pl & Court St, Brooklyn, NY 11231</p>
-                    <div id="map" style="height: 400px; width: 100%;"></div>
-                </div>
-            </div>
+      <div class="row banner">
+        <div class="col-md-6">
+          <img
+            src="assets/stoop_sale.png"
+            alt="Brooklyn Stoop Sale"
+            class="img-fluid animate__animated animate__fadeInLeft"
+          />
         </div>
+        <div
+          class="col-md-6 banner-content animate__animated animate__fadeInRight"
+        >
+          <h1>Brooklyn Stoop Sale</h1>
+          <p>Join us for a fun day of shopping and good vibes!</p>
+          <p>Date: August 10, 2024</p>
+          <p>Time: 10:00 AM - 4:00 PM</p>
+          <p>Location: 2nd Pl & Court St, Brooklyn, NY 11231</p>
+          <div class="location mt-4">
+            <h2>Location</h2>
+            <p>2nd Pl & Court St, Brooklyn, NY 11231</p>
+            <div id="map" style="height: 400px; width: 100%"></div>
+          </div>
+        </div>
+      </div>
     </div>
-    
-    </script>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="src/script.js"></script>
-    <script src="src/map.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8BJJj8x4zEwK6k0TpG287fy9-kJetIqE&callback=initMap&libraries=places,directions"></script>
-</body>
+    <script src="src/script.js" type="module"></script>
+    <script src="./src/map.js" type="module"></script>
+    <script src="./src/dropdown.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.2/sharer.min.js"></script>
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8BJJj8x4zEwK6k0TpG287fy9-kJetIqE&callback=initMap&libraries=places,directions"
+    ></script>
+  </body>
 </html>
