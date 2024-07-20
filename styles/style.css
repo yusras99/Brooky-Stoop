@@ -20,9 +20,6 @@ html body {
   /* color: #f1f1f1;
   background: #f1f1f1; */
 }
-.html{
-    overflow-x: hidden;
-}
 
 /* main{
     width: 100vw;
@@ -34,7 +31,6 @@ html body {
 
 
 #hero {
-    /* background: url('/bricks.jpg') center center/cover no-repeat; */
     /* linear-gradient(to bottom right, #c68c53, #e0b589); */
     color: rgb(52, 23, 23);
     width: 500px;
@@ -101,10 +97,9 @@ section {
     background: linear-gradient(45deg, #ff6b6b, #f06595, #cc65e1);
     position: relative;
     display: inline-block;
-
     border-radius: 50px;
     transition: 0.2s;
-    z-index: 100;
+    z-index: 2;
     text-decoration: none !important;
     color: inherit;
 }
@@ -202,7 +197,7 @@ section {
 
 #products {
   position: relative;  
-  z-index: 2;
+  z-index: 1;
 }
 
 .products-header {
@@ -211,7 +206,12 @@ section {
   padding: 16px;
   margin: 0;
   text-align: center;
-  font-size: 4em;
+  font-family: "Great Vibes", cursive;
+  font-style: regular;
+  font-weight:bolder;
+  font-size: 70px;
+  color: rgb(52, 23, 23);
+  text-shadow: 8px 8px 8px rgba(209, 18, 18, 0.5);
 }
 
 .container {

@@ -39,14 +39,10 @@
           <i class="bi bi-music-note-beamed"></i> Toggle Music
         </button>
         <div class="button-container">
+          
           <button class="location-btn" button id ="location-btn">When and Where?</button>
-             <script>
-              const locationBtn = document.getElementById('location-btn');
-              locationBtn.addEventListener('click', function() {
-                window.location.href = 'map.html';
-              });
-             </script>
-          <button class="products-btn" button id = "products-btn">Product Library</button>
+          <button id="products-btn" class="products-btn">Product Library</button>
+
           <div class="dropdown-share">
             <button class="dropbtn">Share with your friends!</button>
             <div id="myDropdown" class="dropdown-content">
@@ -146,11 +142,29 @@
 
     <script>
       document.addEventListener('DOMContentLoaded', function() {
+        
+        const locationBtn = document.getElementById('location-btn');
+        if (locationBtn) {
+          locationBtn.addEventListener('click', function() {
+            window.location.href = 'map.html';
+          });
+        } else {
+          console.log('Location button not found');
+        }
+  
         const productsBtn = document.getElementById('products-btn');
-        productsBtn.addEventListener('click', function() {
-          const section = document.getElementById('products');
-          section.scrollIntoView({ behavior: 'smooth' });
-        });
+        if (productsBtn) {
+          productsBtn.addEventListener('click', function() {
+            const section = document.getElementById('products');
+            if (section) {
+              section.scrollIntoView({ behavior: 'auto' });
+            } else {
+              console.log('Products section not found');
+            }
+          });
+        } else {
+          console.log('Products button not found');
+        }
       });
     </script>
 

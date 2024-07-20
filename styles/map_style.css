@@ -24,6 +24,21 @@ body {
     color: #333;
 }
 
+.title {
+    font-family: "Great Vibes", cursive;
+    font-style: regular;
+    font-weight:bolder;
+    font-size: 60px;
+    color: rgb(52, 23, 23);
+    text-shadow: 8px 8px 8px rgba(209, 18, 18, 0.5);
+}
+.description {
+    font-family: "Great Vibes", cursive;
+    font-style: regular;
+    font-weight: 200;
+    font-size: 20px;
+    color: rgb(52, 23, 23);
+}
 .button-container {
     display: flex; /* for horizontal layout */
     align-items: center;
