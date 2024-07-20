@@ -24,9 +24,9 @@
     <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body>
-    <canvas id="bg"></canvas>
+    <div class = "bg"></div>
     <script type="module" src="./src/main.js"></script>
-    <main>
+    <!-- <main> -->
       <section id="hero">
         <div class="title">Stoop Sale Brooklyn!</div>
         <div class="sub-title">Your trash... Someone else's treasure.</div>
@@ -39,10 +39,14 @@
           <i class="bi bi-music-note-beamed"></i> Toggle Music
         </button>
         <div class="button-container">
-          <button class="location-btn">
-            <a href="map.html">When and Where?</a>
-          </button>
-          <button class="products-btn">Product Library</button>
+          <button class="location-btn" button id ="location-btn">When and Where?</button>
+             <script>
+              const locationBtn = document.getElementById('location-btn');
+              locationBtn.addEventListener('click', function() {
+                window.location.href = 'map.html';
+              });
+             </script>
+          <button class="products-btn" button id = "products-btn">Product Library</button>
           <div class="dropdown-share">
             <button class="dropbtn">Share with your friends!</button>
             <div id="myDropdown" class="dropdown-content">
@@ -110,7 +114,7 @@
           </div>
         </div>
       </section>
-    </main>
+    <!-- </main> -->
 
     <section id="products">
       <h1 class="products-header">Products For Sale</h1>
@@ -139,6 +143,16 @@
         </article>
       </div>
     </section>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const productsBtn = document.getElementById('products-btn');
+        productsBtn.addEventListener('click', function() {
+          const section = document.getElementById('products');
+          section.scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+    </script>
 
     <script src="src/script.js" type="module"></script>
     <script src="./src/dropdown.js" type="module"></script>

@@ -4,10 +4,10 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import ballImg from '/assets/ball.jpg';
 import rubikImg from '/assets/rubik.jpg';
 import shirtImg from '/assets/shirt.png';
-import brownStoneText from '/assets/brownStoneTexture.jpg';
+import brownStoneTexture from '/assets/bg_cropped.jpg';
 import starImg from '/assets/star.png';
 
-let scene, camera, renderer, brownstoneTexture, box, ball, shirt, controls;
+let scene, camera, renderer, brownstoneTexture, box, ball, shirt, controls, count, clock, bg_geometry;
 
 function addStar() {
   const starGeometry = new THREE.SphereGeometry(0.25, 24, 24);
@@ -91,19 +91,24 @@ function init() {
     0.1,
     1000
   );
-  camera.position.z = 30;
+  camera.position.z = 5;
 
   // Renderer
-  const canvas = document.querySelector('#bg');
-  renderer = new THREE.WebGLRenderer({
-    canvas,
-  });
-  renderer.setPixelRatio(devicePixelRatio);
+  const bg_container = document.querySelector('.bg');
+  const loader = new THREE.TextureLoader()
+  renderer = new THREE.WebGLRenderer({});
+  renderer.setClearColor(0xffffff);
+  // renderer.setPixelRatio(devicePixelRatio);
   renderer.setSize(window.innerWidth, window.innerHeight);
+  bg_container.appendChild(renderer.domElement);
+  
+  bg_geometry = new THREE.PlaneGeometry(14, 8, 15, 9);
+  const bg_material = new THREE.MeshBasicMaterial({
+    map : loader.load(brownStoneTexture),
+  });
+  const bg_mesh = new THREE.Mesh(bg_geometry,bg_material);
+  scene.add(bg_mesh);
 
-  // Brownstone backdrop to show brooklyn views
-  brownstoneTexture = new THREE.TextureLoader().load(brownStoneText);
-  scene.background = brownstoneTexture;
 
   // Add lights
   const ambientLight = new THREE.AmbientLight(0xffffff, 1); // Soft white light
@@ -113,19 +118,45 @@ function init() {
   directionalLight.position.set(1, 1, 1).normalize();
   scene.add(directionalLight);
 
-  Array(100).fill().forEach(addStar);
-  Array(100).fill().forEach(addShirt);
-  Array(100).fill().forEach(addBall);
-  Array(100).fill().forEach(addBox);
+  // Array(100).fill().forEach(addStar);
+  // Array(100).fill().forEach(addShirt);
+  // Array(100).fill().forEach(addBall);
+  // Array(100).fill().forEach(addBox);
 
   // update camera position by listening to dom events by mouse
   controls = new OrbitControls(camera, renderer.domElement);
+
+  // Grab the number of vertices in the background geometry
+  count = bg_geometry.attributes.position.count;
+  // Start the clock to use it for animations
+  clock = new THREE.Clock();
 
   animate();
 }
 
 // Recursive function that gives infinite loop that helps to animate object
 function animate() {
+  const time = clock.getElapsedTime();
+  // Loop for each vertex of the geometry
+  for (let i = 0; i< count; i++){
+    // Get the x and y coord of the ith vertex
+    const x = bg_geometry.attributes.position.getX(i);
+    const y = bg_geometry.attributes.position.getY(i);
+
+    // Create three sine waves with different frequencies and give z a new vertex
+    const anim1 = 0.25 * Math.sin(x + time * 0.7);
+    const anim2 = 0.35 * Math.sin(x * 1 + time * 0.7);
+    const anim3 = 0.1 * Math.sin(y * 15 + time * 0.7);
+    bg_geometry.attributes.position.setZ(i, anim1 + anim2 + anim3);
+
+    // recalculate the vertex normals of the geometry to ensure the lighting updates correctly with the animated vertices
+    bg_geometry.computeVertexNormals();
+    // position attribute of the geometry has been updated and needs to be reprocessed for rendering
+    bg_geometry.attributes.position.needsUpdate = true;
+  }
+
+
+
   requestAnimationFrame(animate); // Request next animation frame
 
   // Rotate objects if they exist
