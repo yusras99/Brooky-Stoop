@@ -1,70 +1,85 @@
 /* Background and container styles */
-body {
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-}
+
 .container {
-    margin-bottom: 0; /* Reduce bottom margin */
-    padding-bottom: 0; /* Reduce bottom padding */
-}
-.navbar {
-    margin-bottom: 0; /* Remove bottom margin from navbar */
-}
-.row.banner {
-    margin-bottom: 0; /* Reduce bottom margin */
-}
-.location {
-    margin-top: 20px; /* Reduce top margin */
+  margin-bottom: 0;
+  /* Reduce bottom margin */
+  padding-bottom: 0;
+  /* Reduce bottom padding */
 }
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: url('../assets/background_img3.jpg') no-repeat center center fixed;
-    color: #333;
+.navbar {
+  margin-bottom: 0;
+  /* Remove bottom margin from navbar */
+}
+
+.row.banner {
+  margin-bottom: 0;
+  /* Reduce bottom margin */
+}
+
+.location {
+  margin-top: 20px;
+  /* Reduce top margin */
+}
+
+.body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: url('../assets/background_img3.jpg') no-repeat center center fixed;
+  color: #333;
+  overflow-x: hidden;
+  /* Prevent horizontal scrolling */
 }
 
 .title {
-    font-family: "Great Vibes", cursive;
-    font-style: regular;
-    font-weight:bolder;
-    font-size: 60px;
-    color: rgb(52, 23, 23);
-    text-shadow: 8px 8px 8px rgba(209, 18, 18, 0.5);
+  font-family: 'Great Vibes', cursive;
+  font-style: regular;
+  font-weight: bolder;
+  font-size: 60px;
+  color: rgb(52, 23, 23);
+  text-shadow: 8px 8px 8px rgba(209, 18, 18, 0.5);
 }
-.description {
-    font-family: "Great Vibes", cursive;
-    font-style: regular;
-    font-weight: 200;
-    font-size: 20px;
-    color: rgb(52, 23, 23);
-}
-.button-container {
-    display: flex; /* for horizontal layout */
-    align-items: center;
-}
-.home-btn, .products-btn{
-    top: 10px;
-    left: 10px;
-    padding: 16px;
-    font-size: 1em;
-    font-weight: bold;
-    color: white;
-    border: none;
-    cursor: pointer;
-    background: linear-gradient(45deg, #ff6b6b, #f06595, #cc65e1);
-    position: relative;
-    display: inline-block;
 
-    border-radius: 50px;
-    transition: 0.2s;
-    z-index: 100;
-    text-decoration: none !important;
-    color: inherit;
+.description {
+  font-family: 'Great Vibes', cursive;
+  font-style: regular;
+  font-weight: 200;
+  font-size: 20px;
+  color: rgb(52, 23, 23);
 }
+
+.button-container {
+  display: flex;
+  /* for horizontal layout */
+  align-items: center;
+}
+
+.home-btn,
+.products-btn {
+  top: 10px;
+  left: 10px;
+  padding: 16px;
+  font-size: 1em;
+  font-weight: bold;
+  color: white;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(45deg, #ff6b6b, #f06595, #cc65e1);
+  position: relative;
+  display: inline-block;
+
+  border-radius: 50px;
+  transition: 0.2s;
+  z-index: 100;
+  text-decoration: none !important;
+  color: inherit;
+}
+
 .location-btn:hover {
-    box-shadow: 6px 6px rgba(0, 0, 0); 
-  }
+  box-shadow: 6px 6px rgba(0, 0, 0);
+}
+
 .dropbtn {
   padding: 16px;
   font-size: 1em;
@@ -89,7 +104,7 @@ body {
 }
 
 .dropdown-share:hover {
-  box-shadow: 6px 6px rgba(0, 0, 0); 
+  box-shadow: 6px 6px rgba(0, 0, 0);
 }
 
 .dropdown-content {
@@ -121,85 +136,84 @@ body {
   cursor: pointer;
 }
 
-
 .button-icon {
   font-size: 1.5rem;
   color: pink;
   width: 100%;
 }
-  
+
 .container {
-    background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
-    border-radius: 8px;
-    padding: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  /* Semi-transparent background */
+  border-radius: 8px;
 }
 
 /* Toggle music button styles */
 .explore-button {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    background: linear-gradient(45deg, #ff6b6b, #f06595, #cc65e1);
-    color: white;
-    border: none;
-    padding: 0.75em 1.5em;
-    font-size: 1em;
-    font-weight: bold;
-    border-radius: 30px;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    transition: background 0.3s, transform 0.3s;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: linear-gradient(45deg, #ff6b6b, #f06595, #cc65e1);
+  color: white;
+  border: none;
+  padding: 0.75em 1.5em;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: background 0.3s, transform 0.3s;
 }
 
 .explore-button:hover {
-    background: linear-gradient(45deg, #ff6b6b, #f06595, #8f65e1);
-    transform: scale(1.05);
+  background: linear-gradient(45deg, #ff6b6b, #f06595, #8f65e1);
+  transform: scale(1.05);
 }
 
 .explore-button:active {
-    transform: scale(0.95);
+  transform: scale(0.95);
 }
 
 /* Banner styles */
 .banner {
-    align-items: center;
-    justify-content: center;
-    text-align: left;
-    flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  flex-wrap: wrap;
 }
 
 .banner-content h1 {
-    font-size: 2.5em;
+  font-size: 2.5em;
 }
 
 .banner-content p {
-    font-size: 1.2em;
+  font-size: 1.2em;
 }
 
 /* Location styles */
 .location {
-    margin: 2em 0;
+  margin: 2em 0;
 }
 
 #map {
-    margin: 1em 0;
+  margin: 1em 0;
 }
 
 #user-address {
-    padding: 0.5em;
+  padding: 0.5em;
 }
 
 #travel-mode {
-    padding: 0.5em;
-    margin-left: 1em;
+  padding: 0.5em;
+  margin-left: 1em;
 }
 
 #check-route {
-    padding: 0.5em 1em;
-    margin-left: 1em;
+  padding: 0.5em 1em;
+  margin-left: 1em;
 }
 
 #travel-info {
-    margin-top: 1em;
+  margin-top: 1em;
 }

@@ -3,20 +3,29 @@ html body {
   margin: 0;
 }
 
+body {
+  background: url('/assets/background_img3.jpg') no-repeat center center fixed;
+}
+
+footer {
+  background-color: white;
+}
+
 .bg {
   position: absolute;
   top: 0;
-  left: 0; 
+  left: 0;
   /* width: 10vw;
   height: 100vh; */
-  z-index: -1; /* Ensure the canvas is behind other content */
+  z-index: -1;
+  /* Ensure the canvas is behind other content */
   color: #f1f1f1;
   background: #f1f1f1;
 }
 
 .content {
   position: relative;
-  z-index: 1; 
+  z-index: 1;
   /* color: #f1f1f1;
   background: #f1f1f1; */
 }
@@ -31,81 +40,94 @@ html body {
 
 
 #hero {
-    /* linear-gradient(to bottom right, #c68c53, #e0b589); */
-    color: rgb(52, 23, 23);
-    width: 500px;
-    height: 100vh;
-    margin: 100px;
-    padding: 0;
-    /* border-radius: 20px; Soften edges */
-    /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); */
-    line-height: 1.5;
-    display: flex;
-    flex-direction: column;
-    justify-content: auto; /* Center vertically */
-    /* align-items: center; */
+  /* linear-gradient(to bottom right, #c68c53, #e0b589); */
+  color: rgb(52, 23, 23);
+  width: 500px;
+  height: 100vh;
+  margin: 100px;
+  padding: 0;
+  /* border-radius: 20px; Soften edges */
+  /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); */
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: auto;
+  /* Center vertically */
+  /* align-items: center; */
 }
 
 @keyframes moveUpDown {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .title {
-    font-family: "Great Vibes", cursive;
-    font-style: regular;
-    font-weight:bolder;
-    font-size: 70px;
-    color: rgb(52, 23, 23);
-    text-shadow: 8px 8px 8px rgba(209, 18, 18, 0.5);
-    animation: moveUpDown 2s infinite;
+  font-family: "Great Vibes", cursive;
+  font-style: regular;
+  font-weight: bolder;
+  font-size: 70px;
+  color: rgb(52, 23, 23);
+  text-shadow: 8px 8px 8px rgba(209, 18, 18, 0.5);
+  animation: moveUpDown 2s infinite;
 }
-.sub-title{
-    font-family: "Great Vibes", cursive;
-    font-style: regular;
-    font-weight: 400;
-    font-size: 50px;
-    color: rgb(52, 23, 23);
-    animation: moveUpDown 2s infinite;
+
+.sub-title {
+  font-family: "Great Vibes", cursive;
+  font-style: regular;
+  font-weight: 400;
+  font-size: 50px;
+  color: rgb(52, 23, 23);
+  animation: moveUpDown 2s infinite;
 }
 
 @media (max-width: 768px) {
-    .title {
-        font-size: 30px; /* Adjust font size for smaller screens */
-    }
+  .title {
+    font-size: 30px;
+    /* Adjust font size for smaller screens */
+  }
 }
+
 section {
-    grid-column: 2 / 8;
-    padding: 1 rem;
+  grid-column: 2 / 8;
+  padding: 1 rem;
 }
 
 .button-container {
-    display: flex; /* for horizontal layout */
-    align-items: center;
+  display: flex;
+  /* for horizontal layout */
+  align-items: center;
 }
-.location-btn, .products-btn{
-    padding: 16px;
-    font-size: 1em;
-    font-weight: bold;
-    color: white;
-    border: none;
-    cursor: pointer;
-    background: linear-gradient(45deg, #ff6b6b, #f06595, #cc65e1);
-    position: relative;
-    display: inline-block;
-    border-radius: 50px;
-    transition: 0.2s;
-    z-index: 2;
-    text-decoration: none !important;
-    color: inherit;
+
+.location-btn,
+.products-btn {
+  padding: 16px;
+  font-size: 1em;
+  font-weight: bold;
+  color: white;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(45deg, #ff6b6b, #f06595, #cc65e1);
+  position: relative;
+  display: inline-block;
+  border-radius: 50px;
+  transition: 0.2s;
+  z-index: 2;
+  text-decoration: none !important;
+  color: inherit;
 }
-.location-btn:hover, .products-btn:hover {
-    box-shadow: 6px 6px rgba(0, 0, 0); 
-  }
+
+.location-btn:hover,
+.products-btn:hover {
+  box-shadow: 6px 6px rgba(0, 0, 0);
+}
+
 .dropbtn {
   padding: 16px;
   font-size: 1em;
@@ -128,7 +150,7 @@ section {
 }
 
 .dropdown-share:hover {
-  box-shadow: 6px 6px rgba(0, 0, 0); 
+  box-shadow: 6px 6px rgba(0, 0, 0);
 }
 
 .dropdown-content {
@@ -169,58 +191,63 @@ section {
 
 /* Toggle music button styles */
 .explore-button {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    background: linear-gradient(45deg, #ff6b6b, #f06595, #cc65e1);
-    color: white;
-    border: none;
-    padding: 0.75em 1.5em;
-    font-size: 1em;
-    font-weight: bold;
-    border-radius: 30px;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    transition: background 0.3s, transform 0.3s;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: linear-gradient(45deg, #ff6b6b, #f06595, #cc65e1);
+  color: white;
+  border: none;
+  padding: 0.75em 1.5em;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: background 0.3s, transform 0.3s;
 }
 
 .explore-button:hover {
-    background: linear-gradient(45deg, #ff6b6b, #f06595, #8f65e1);
-    transform: scale(1.05);
+  background: linear-gradient(45deg, #ff6b6b, #f06595, #8f65e1);
+  transform: scale(1.05);
 }
 
 .explore-button:active {
-    transform: scale(0.95);
+  transform: scale(0.95);
 }
 
 
 #products {
-  position: relative;  
+  position: relative;
   z-index: 1;
 }
 
 .products-header {
-  background-color: #fff;
+  /* background-color: #fff; */
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
   width: 100%;
-  padding: 16px;
-  margin: 0;
+  max-width: 1140px;
+  padding: 15px;
+  margin: 0 auto;
   text-align: center;
   font-family: "Great Vibes", cursive;
   font-style: regular;
-  font-weight:bolder;
+  font-weight: bolder;
   font-size: 70px;
   color: rgb(52, 23, 23);
   text-shadow: 8px 8px 8px rgba(209, 18, 18, 0.5);
 }
 
-.container {
+.scroll-container {
   width: 100%;
-  height: 350px;
+  /* height: 350px; */
   padding: 72px 0;
   overflow-x: scroll;
   white-space: nowrap;
-  background-color: #fff;
+  /* background-color: #fff; */
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
   display: flex;
   gap: 15px;
   -ms-overflow-style: none;
@@ -231,10 +258,10 @@ section {
   width: 100%;
   height: 300px;
   position: absolute;
-  background-color: rgba(0,0,0 , 0.0001);
+  background-color: rgba(0, 0, 0, 0.0001);
 }
 
- ::-webkit-scrollbar {
+::-webkit-scrollbar {
   display: none;
 }
 
@@ -244,6 +271,7 @@ article {
   box-sizing: content-box;
   border-radius: 15px;
 }
+
 article .wrapper {
   width: 100%;
   background-color: #fff;
@@ -259,4 +287,20 @@ article img {
   object-fit: cover;
   border-radius: 15px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.10);
+}
+
+@media screen and (max-width: 800px) {
+  .title,
+  .products-header {
+    font-size: 40px;
+  }
+
+  article {
+    min-width: 150px;
+    height: 280px;
+  }
+
+  .scroll-container {
+    padding: 15px 0;
+  }
 }
